@@ -65,6 +65,7 @@ body {
   font-family: Lato, sans-serif;
   color: #222;
   font-size: 0.9em;
+  overflow-x: hidden;
 }
 main {
   flex: 1 0 auto;
@@ -162,23 +163,77 @@ footer {
   color: #fff;
   background-color: rgba(61, 100, 158, 0.9);
 }
-.info{
-    flex: 2 ;
-    display: flex;
+.info {
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+.info img {
+  max-width: 90px;
+}
+.song h1,
+p {
+  padding: 0.5em;
+}
+.button {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+}
+.button i {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* ! Responsive */
+@media screen and (max-width: 425px) {
+  /*write your css in this code block*/
+  aside, .music-list li p:nth-child(2), .music-list li p:nth-child(4), .info img, .button i:nth-child(4), .button i:nth-child(5), .catty-music div:nth-child(1) p:nth-child(2), .catty-music div:nth-child(1) p:nth-child(3){
+    display: none;
+  }
+  /* .content{
+    max-width: 100vw;
+  } */
+  .music-head {
+    flex-direction: column;
     align-items: center;
-}
-.info img{
-    max-width: 90px;
-}
-.song h1,p{
-    padding: 0.5em;
-}
-.button{
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
-}
-.button i{
-    cursor: pointer;
-    font-size: 1.5rem;
+  }
+  .music-head img {
+    max-width: 150px;
+  }
+  .catty-music {
+    padding-left: 0 !important;
+    text-align: center;
+  }
+  .catty-music div:nth-child(1) {
+    margin-bottom: 1em;
+  }
+  .catty-music div:nth-child(1) p:first-child {
+    font-size: 0.8rem;
+  }
+  .catty-music div:nth-child(1) p:not(:first-child) {
+    font-size: 0.8rem;
+  }
+  .catty-music div:nth-child(2) i.fas {
+    font-size: 0.8rem;
+  }
+  .music-list {
+    padding: 1em;
+  }
+  li {
+    justify-content: space-evenly;
+    padding: 0 10px;
+  }
+  li p {
+    flex: 0 0 50%;
+  }
+  li p:nth-child(3){
+    text-align: end;
+  }
+  li span.catty-cloud {
+    font-size: 0.5em;
+  }
+  .info, .button{
+    flex:1;
+  }
 }
